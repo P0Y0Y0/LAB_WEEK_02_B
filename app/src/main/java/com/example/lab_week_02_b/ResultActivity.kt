@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.graphics.Color
 import android.app.Activity
+import android.widget.Button
 
 class ResultActivity : AppCompatActivity() {
     companion object {
@@ -22,6 +23,10 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
+
+        findViewById<Button>(R.id.back_button).setOnClickListener {
+            finish()
+        }
 
         if (intent != null) {
             val colorCode = intent.getStringExtra(COLOR_KEY)
